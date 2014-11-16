@@ -1,0 +1,15 @@
+1fc4bba0538ebdec35296b80db911e0d *DESCRIPTION
+9289f7b87a2525748a6f2212d65c3026 *NAMESPACE
+4ff28808f4cff519e7e678f37c1d7408 *R/calculate.absmax.R
+da0676b6ac58f5bc6bbf330433c644a1 *R/calculate.quantiles.R
+8b84ac9503c5dee72ad6465005ce6b63 *R/calculate.sortsum.R
+655e325b9cefe0295c366b92d9566417 *R/ccdplot.R
+2e1de3e012d4d385e01409967ea598c2 *R/check.remove.params.R
+04141eb2bfeace9c90148150dacf71bb *R/qddplot.R
+166ffd2bcd503c6d401465a41bbcab1d *R/remove.list.R
+f046d950d800fc7144d7c453e441aa17 *R/remove.vector.R
+ac3ef7133aedbd602b14371cb66c6c65 *data/projectdata.rda
+72ad3c65cffee6344fdbefcd03d39799 *man/ccdplot.Rd
+fb4ff7e5dd767cbbf56f931440932963 *man/projectdata.Rd
+fd118bbb3ddde9e8f39df8282487fe2a *man/qddplot.Rd
+ea423f999d29dd9afcfb80e00b948ef2 *man/vudc-package.Rd
