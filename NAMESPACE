@@ -1,2 +1,5 @@
+importFrom("graphics", "abline", "axis", "plot", "points")
+importFrom("stats", "quantile")
 export(ccdplot)
 export(qddplot)
+  

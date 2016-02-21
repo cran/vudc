@@ -6,11 +6,11 @@ Cumulative Characteristic Diagram
 \description{
 The parameter array (or list of arrays) is sorted non-ascending.
 Then cumulative values are calculated for every value.
-E.g. the fifth element of the resulting array will be the sum of the first 5 elements in the sorted array.
-The resulting array is illustrated visually, taking the vector indices as x coordinate, the calculated cumulative values as y coordinate, and the points are connected with lines..
+E.g. the fifth element of the resulting array will be the sum of the first five elements in the sorted array.
+The resulting array is illustrated visually, taking the vector indices as x coordinate, the calculated cumulative values as y coordinate, and the points are connected with lines.
 
 The function can handle an array or list of arrays.
-In the latter case all the values are drawn on the same diagram, along with the union of them (if not stated otherwise).
+In the latter case all the values are drawn on the same diagram, along with the union of them (if not stated otherwise); this is called Composite Cumulative Characteristic Diagram.
 The diagram works with numeric data of any distribution; however, the most spectacular results are expected in case of data of normal distribution with mean of 0.
 }
 \usage{
@@ -32,7 +32,7 @@ ccdplot(x, remove.absolute = NA, remove.ratio = NA,
 		this logical parameter indicates if the union of the provided data should be drawn. The default value is true. This feature is especially useful if the values within arrays are disjoint: it provides an overview how the individual parts fit to the whole.
   }
   \item{jump}{
-		in case of composite cumulative characteristic diagrams (i.e. if the x is a list), the diagram looks better if small gaps between characteristic lines are drawn. The size if this gap is automatically calculated; however, that can be overwritten with this parameter.
+		in case of Composite Cumulative Characteristic Diagrams (i.e. if the \code{x} is a list), the diagram looks better if small gaps between characteristic lines are drawn. The size if this gap is automatically calculated; however, that can be overwritten with this parameter.
   }
   \item{xlab}{
 		title for the x axis, see \code{\link{plot}}.
@@ -46,8 +46,7 @@ ccdplot(x, remove.absolute = NA, remove.ratio = NA,
 }
 
 \details{
-A typical cumulative characteristic diagram is an upside-down U shape.
-If it is not, then the input is not a normal distributed data with mean of 0.
+The cumulative characteristic diagram of normal distribution with mean value 0 is an upside-down U shape.
 
 If the right end of the diagram is above the left end, it means the sum of positive values are greater than the absolute value of the sum of negative values, meaning the average is above 0.
 A long horizontal part in the middle indicates high number of 0 values.
@@ -81,7 +80,7 @@ ccdplot(c(rnorm(95), 11:15), remove.ratio=0.1);
 # the standard deviations are different).
 ccdplot(list(rnorm(50, 0, 5), rnorm(100), rnorm(150), rnorm(200, 0, 0.2))) 
 
-# Set some standard graphich parameters.
+# Set some standard graphic parameters.
 ccdplot(rnorm(100), main="Cumulative Characteristic Diagram", 
 sub="100 random values of standard normal distribution", 
 ylab="Summed random values", xlab="Sorted occurrences", col="red");

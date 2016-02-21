@@ -6,7 +6,7 @@ Quantile Difference Diagram
 \description{
 Creates quantile difference diagrams.
 It takes two numerical datasets, sorts them, calculates differences on the same quantiles (i.e. lowest with the lowest, median with the median, 90\% with 90\% etc.) and displays these differences.
-It can be used to check the differences in two datasets. Appropriate for visual illustration of Wilcoxon rank test and F-test of equality of variances.
+It is appropriate for visual illustration of Wilcoxon rank test and F-test of equality of variances.
 }
 \usage{
 qddplot(x, y, 
@@ -56,28 +56,26 @@ qddplot(x, y,
 
 \details{
 The quantile difference diagrams can be used to visualize the results of Wilcoxon rank tests (\code{\link{wilcox.test}}).
-Wilcoxon rank test basically checks if in one dataset are the values are different (more specifically: higher or lower) than those in the other.
-If it turns that numbers found in dataset A are higher than those in dataset B, that doesn't necessary mean all the values in A are higher than any value in B, nor  it means that in case of pairwise comparison on the same quantile (e.g. minimum with the minimum, median with the median etc.), values in A are higher than values in B.
-On the other hand, in case of quantile comparison, if significantly higher number of elements are higher in A than B, comparing the number of elements where elements in B are higher than A, then the Wilcoxon rank test results is an appropriately low p-value, indicating that the null-hypothesis (the medians are equal) can be rejected.
+Wilcoxon rank test basically checks if the values found in one dataset are different (more specifically: higher or lower) than those in the other.
+If the values in subset x are higher than values in subset y at all quantiles, then the result would look like a line completely on the same part of y coordinate (either completely on the positive or on the negative part).
 
-If in case of comparison, if in all cases of quantiles the values in subset A are higher than values in subset B, then the result would look like a line completely on the same part of y coordinate (either completely on the positive or on the negative part).
-This is rare. In most of the cases the diagram resembles on a more or less straight line.
+In most of the cases the diagram resembles on a more or less straight line.
 The slope indicates the difference between variances (see also \code{\link{var.test}}).
 The position of the line indicates if the values in one dataset is higher than those in another; being close to 0 at 50\%, if they are similar.
 }
 
 \author{
-	Csaba Farago
+	Csaba Farago <farago@inf.u-szeged.hu>
 }
 
 \examples{
 # Using default settings with random data.
 qddplot(rnorm(100, 30, 50), rnorm(200, 10, 10));
 
-# remove.ratio = 0.0 means the outliers are not removed. The result is usually biased.
+# remove.ratio = 0.0 means the outliers are not removed.
 qddplot(rnorm(100, 30, 50), rnorm(200, 10, 10), remove.ratio=0.0);
 
-# remove.ratio = 0.25 means only the middle half is displayed, the upper and lower quantile not.
+# remove.ratio = 0.25 means only the middle half is displayed, the upper and lower quantile are not.
 qddplot(rnorm(100, 30, 50), rnorm(200, 10, 10), remove.ratio=0.25);
 
 # Illustrating similar and different medians and variances on 4 quantile difference diagrams.
@@ -87,13 +85,25 @@ dataSetB <- seq(-15, 25) + rnorm(41);
 dataSetC <- seq(-40, 40) + rnorm(81);
 dataSetD <- seq(-20, 20) + rnorm(41);
 op <- par(mfrow=c(2,2));
-qddplot(dataSetA, dataSetD, main = "Similar median, similar variance", 
+qddplot(
+	dataSetA, 
+	dataSetD, 
+	main = "Similar median, similar variance",
 	sub = "-20...20 vs. -20...20");
-qddplot(dataSetA, dataSetB, main = "Different median, similar variance", 
+qddplot(
+	dataSetA, 
+	dataSetB, 
+	main = "Different median, similar variance",
 	sub = "-20...20 vs. -15...25");
-qddplot(dataSetA, dataSetC, main = "Similar median, different variance", 
+qddplot(
+	dataSetA, 
+	dataSetC, 
+	main = "Similar median, different variance",
 	sub = "-20...20 vs. -40...40");
-qddplot(dataSetB, dataSetC, main = "Different median, different variance", 
+qddplot(
+	dataSetB, 
+	dataSetC, 
+	main = "Different median, different variance",
 	sub = "-15...25 vs. -40...40"); 
 par(op);
 

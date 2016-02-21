@@ -1,5 +1,5 @@
-1fc4bba0538ebdec35296b80db911e0d *DESCRIPTION
-9289f7b87a2525748a6f2212d65c3026 *NAMESPACE
+1cff438b9380d9806676eebdf5c82434 *DESCRIPTION
+5fd6d5a8297351197f87273ccc827427 *NAMESPACE
 4ff28808f4cff519e7e678f37c1d7408 *R/calculate.absmax.R
 da0676b6ac58f5bc6bbf330433c644a1 *R/calculate.quantiles.R
 8b84ac9503c5dee72ad6465005ce6b63 *R/calculate.sortsum.R
@@ -8,8 +8,9 @@ da0676b6ac58f5bc6bbf330433c644a1 *R/calculate.quantiles.R
 04141eb2bfeace9c90148150dacf71bb *R/qddplot.R
 166ffd2bcd503c6d401465a41bbcab1d *R/remove.list.R
 f046d950d800fc7144d7c453e441aa17 *R/remove.vector.R
-ac3ef7133aedbd602b14371cb66c6c65 *data/projectdata.rda
-72ad3c65cffee6344fdbefcd03d39799 *man/ccdplot.Rd
-fb4ff7e5dd767cbbf56f931440932963 *man/projectdata.Rd
-fd118bbb3ddde9e8f39df8282487fe2a *man/qddplot.Rd
-ea423f999d29dd9afcfb80e00b948ef2 *man/vudc-package.Rd
+4b550b985720c3e24b70462781ab107b *data/projectdata.rda
+ae5ce9934a33fecabc6a7d4bc07466eb *inst/CITATION
+b00ea7eed1107c7a91c6a6cf3c9fb2a3 *man/ccdplot.Rd
+51d538d5e0ad46f2f00f62ae0b4da85d *man/projectdata.Rd
+d0c9262356c3813a2770b5387c42a4f8 *man/qddplot.Rd
+460e9a04560572fae994ec8cbe18dbc6 *man/vudc-package.Rd
